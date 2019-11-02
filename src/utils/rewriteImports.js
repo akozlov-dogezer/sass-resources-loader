@@ -12,7 +12,7 @@ export const getRelativeImportPath = (oldImportPath, absoluteImportPath, moduleC
   return path.relative(moduleContext, absoluteImportPath);
 };
 
-export default function (error, file, contents, moduleContext, callback) {
+export default function (error, file, contents, moduleContext, callback, convert_to_scss) {
   if (error) {
     logger.debug('Resources: **not found**');
     return callback(error);
@@ -36,8 +36,15 @@ export default function (error, file, contents, moduleContext, callback) {
 
     return `@import ${quote}${newImportPath}${quote}`;
   });
-
-  callback(null, rewritten);
+  if (convert_to_scss)
+  {
+    const rewritten2 = rewritten.replace(';','')
+    callback(null, rewritten2);
+  }
+  else
+  {
+     callback(null, rewritten);
+  }
 
   return undefined;
 }
