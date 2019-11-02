@@ -23,7 +23,7 @@ export default function (source) {
   logger.debug('Hey, we\'re in DEBUG mode! Yabba dabba doo!');
 
   const resourcesFromConfig = (loaderUtils.getOptions(this) || {}).resources;
-  const convert_to_sass = (loaderUtils.getOptions(this) || {}).convert_to_sass;
+  const convertToSass = (loaderUtils.getOptions(this) || {}).convert_to_sass;
 
   if (!resourcesFromConfig) {
     const error = new Error('Can\'t find sass resources in your config. Make sure loader.options.resources exists');
@@ -67,7 +67,7 @@ export default function (source) {
     files,
     (file, cb) => {
       fs.readFile(file, 'utf8', (error, contents) => {
-        rewriteImports(error, file, contents, moduleContext, cb, convert_to_sass);
+        rewriteImports(error, file, contents, moduleContext, cb, convertToSass);
       });
     },
     (error, resources) => {
