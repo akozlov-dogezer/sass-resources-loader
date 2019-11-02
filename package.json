@@ -1,7 +1,7 @@
 {
-  "name": "sass-resources-loader",
+  "name": "sass-resources-loader-same-file-in-scss-sass",
   "version": "2.0.1",
-  "description": "SASS resources loader for Webpack",
+  "description": "SASS resources loader for Webpack - with a small hack to attempt to load same variables file both into scss and sass files",
   "main": "lib/loader.js",
   "scripts": {
     "start": "npm run lint && npm run clean && npm run dev",
@@ -24,10 +24,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/shakacode/sass-resources-loader.git"
+    "url": "https://github.com/akozlov-dogezer/sass-resources-loader.git"
   },
   "bugs": {
-    "url": "https://github.com/shakacode/sass-resources-loader/issues"
+    "url": "https://github.com/akozlov-dogezer/sass-resources-loader/issues"
   },
   "keywords": [
     "css",
