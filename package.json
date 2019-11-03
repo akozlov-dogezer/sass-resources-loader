@@ -1,6 +1,6 @@
 {
   "name": "sass-resources-loader-same-file-in-scss-sass",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "SASS resources loader for Webpack - with a small hack to attempt to load same variables file both into scss and sass files",
   "main": "lib/loader.js",
   "scripts": {
