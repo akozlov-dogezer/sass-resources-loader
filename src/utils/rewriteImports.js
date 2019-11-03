@@ -37,7 +37,7 @@ export default function (error, file, contents, moduleContext, callback, convert
     return `@import ${quote}${newImportPath}${quote}`;
   });
   if (convertToSass) {
-    const rewritten2 = rewritten.replace(';', '');
+    const rewritten2 = rewritten.replace(/;/g, '');
     callback(null, rewritten2);
   } else {
     callback(null, rewritten);
