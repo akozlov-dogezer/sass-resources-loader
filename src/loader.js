@@ -22,7 +22,8 @@ export default function (source) {
 
   logger.debug('Hey, we\'re in DEBUG mode! Yabba dabba doo!');
 
-  const {resourcesFromConfig:resources, convertToSass:convertToSass}  = (loaderUtils.getOptions(this) || {});
+  const resourcesFromConfig = (loaderUtils.getOptions(this) || {}).resources;
+  const convertToSass = (loaderUtils.getOptions(this) || {}).convert_to_sass;
 
   if (!resourcesFromConfig) {
     const error = new Error('Can\'t find sass resources in your config. Make sure loader.options.resources exists');
